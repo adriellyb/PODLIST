@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 6 - Aprendendo JS</title>
+    <style>
+        body {
+            background-color: rgb(92, 186, 209);
+            color: #fff;
+            font: normal 20px Arial;
+        }
+        h1 {
+            color: rgb(199, 117, 130);
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá, mundo!</h1>
+    <p>Agora a maldição foi desfeita!!</p>
+    <script>
+
+        /* EXERCICIO 2
+        var nome = window.prompt('Qual é o seu nome?'); //vai perguntar o nome...
+        window.alert('É um grande prazer em te conhecer, '+nome+'!'); //concatenação
+        */
+        
+        /* EXERCICIO 3
+        var n1 = window.prompt('Digite um numero: ');   //string
+        var n2 = window.prompt('Digite outro numero: ');    //string
+        var soma = Number(n1) + Number(n2);
+        //Number.parseInt() ou Number.parseFloat() = comandos de conversao de dados
+        //Number() = fica a criterio do js o tipo de conversao int ou float
+
+        window.alert(`A soma entre ${n1} e ${n2} é ${soma}`); //USANDO AS CRASES!!
+        */
+
+        /* EXERCICIO 4 */
+        var nome = window.prompt('Qual é o seu nome?');
+        document.write(`Olá, <strong>${nome}</strong>. Seu nome tem ${nome.length} letras.<br/>`);
+        document.write(`Seu nome em maiusculo é ${nome.toUpperCase()}.<br/>`);
+        document.write(`Seu nome em minusculo é ${nome.toLowerCase()}.<br/>`);
+    </script>
+</body>
+</html>
