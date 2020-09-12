@@ -53,8 +53,27 @@
 
     Comandos de manipulação de strings:
 
-        * s.length = quantos caracteres a string tem
-        * s.toUpperCase() = todos os caracteres em maiusculo
-        * s.toLowerCase() = todos os caracteres em minusculo
-        * 
+        * var.length = quantos caracteres a string tem
+        * var.toUpperCase() = todos os caracteres em maiusculo
+        * var.toLowerCase() = todos os caracteres em minusculo
+    
+    Mexendo com valores numericos:
+
+        * var.toFixed(2) = numero com 2 casas decimais  //string
+            > var n1 = 1545.5
+            undefined
+            > n1
+            1545.5
+            > n1.toFixed(2)
+            '1545.50'
+
+        * var.toFixed(2).replace('.', ',') = substitui o ponto por virgula
+            > n1.toFixed(2).replace('.',',')
+            '1545,50'
+        
+        * var.toLocaleString('pt-BR', {style: 'currency', currency:'BRL'}) = localiza a string em português com um atributo de valor monetário em reais (moeda brasileira)
+            > n1.toLocaleString('pt-BR', {style:'currency', currency:'BRL'})
+            'R$ 1,545.50'
 */
+
+/* Aula 7 - Operadores */

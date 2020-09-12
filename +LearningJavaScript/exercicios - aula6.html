@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> HOMMY - Aluguéis por temporada </title>
+    <style>
+        body {
+            font: normal 20px Arial;
+            background: rgb(105, 124, 69);
+            color: blanchedalmond;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        var imovel = window.prompt('Qual tipo de imóvel você está ofertando?');
+        var quartos = Number(window.prompt('Quantos quartos possui este imóvel?'));
+        var lugar = window.prompt('Em qual lugar fica localizado?');
+        var preco = Number(window.prompt('Quanto custa o aluguel deste imóvel?'));
+
+        var reais = preco.toLocaleString('pt-BR', {style: 'currency', currency:'BRL'});
+
+        document.write(`<strong><h2>Aluga-se um(a) ${imovel} em ${lugar}</h2></strong><br />`);
+        document.write(`<h4>Número de Quartos: ${quartos}</h4><br />`);
+        document.write(`<h4>Preço do Aluguel: ${reais} / mês</h4>`);
+    </script>
+    
+</body>
+</html>
