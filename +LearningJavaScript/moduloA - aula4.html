@@ -20,9 +20,22 @@
     <p>Agora a maldição foi desfeita!!</p>
     <script>
 
-        window.alert('Meu primeiro script!');
+        /**window.alert('Meu primeiro script!');
         window.confirm('Quer assistir a aula de programação?')
-        window.prompt('Qual é o seu nome?')
+        window.prompt('Qual é o seu nome?')*/
+
+        function alerta() {
+            window.alert('Ja se passaram 3 segundos!');
+        }
+
+        setTimeout(function () {
+            alerta();
+        }, 3000);
+
+        //let totalTime = 6000;
+        //let alertTime = 3000;
+
+        //setTimeout(alerta, totalTime-alertTime);
         
     </script>
 </body>

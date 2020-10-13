@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">    
+    <title>Relógio</title>
+
+    <style>
+        body{
+            background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+        }
+        .box {
+            left: 50%;
+            top: 50%;
+            margin-left:-190px; /* Metade do valor da Largura */
+            margin-top: 100px; /* Metade da valor da Altura */
+            position:absolute;
+            width: 400px; /* Valor da Largura */
+            height: 400px; /* Valor da Altura */
+            background: linear-gradient(180deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+            border-radius: 15px;
+            cursor: pointer;    
+
+            /*Colocando sombra -> plano cartesiano*/
+            -webkit-box-shadow: 6px 4px 18px -8px rgba(0,0,0,0.75);  /*horizontal - vertical - blur - espalhamento - cor*/
+            -moz-box-shadow: 6px 4px 18px -8px rgba(0,0,0,0.75);
+            box-shadow: 6px 4px 18px -8px rgba(0,0,0,0.75);
+        }
+        a {
+            text-decoration: none;
+        }
+        .box:hover {
+            background: linear-gradient(360deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+        }
+        .box-inner {
+            position: relative;
+            width: 100%;
+            height: 200px;
+        }
+        .title {
+            font-size: 30px;
+            text-align: center;
+            padding-top: 15px;
+        }
+        .clock {
+            font-size: 80px;
+            text-align: center;
+            padding-top: 70px;
+        }
+        .title, .clock {
+            font-family: 'Roboto Slab', serif;
+            color: #f3f3f3;
+        }
+        /*Responsividade*/
+        @media screen and (max-width: 500px) {
+            .box {
+                width: 70vw;
+                height: 50vh;
+                margin-left: -37%;
+                margin-top: 10%;
+            }
+            .clock {
+                font-size: 55px;
+                padding-top: 50px;
+            }
+            .title {
+                font-size: 25px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="box-inner">
+        <a href="./exercicio - botaocomentar.html" class="box">
+            <div class="title">Hoje é dia <div id="data"></div></div>
+            <div id="hora" class="clock"></div>
+        </a>
+    </div>
+
+    <script>
+
+        // A function zero concatena a string (número) 0 em frente aos números mantendo o zero na frente dos números menores que 10. Exemplo: 21:05:01
+
+        function zero(x) {
+            if (x < 10) {
+                x = '0' + x;
+            }
+            return x;
+        }
+
+        setInterval(function() {
+
+            let novaHora = new Date();
+
+            // getHours trará a hora
+            // geMinutes trará os minutos
+            // getSeconds trará os segundos
+
+            let hora = novaHora.getHours();
+            let minuto = novaHora.getMinutes();
+            let segundo = novaHora.getSeconds();
+
+            let dia = novaHora.getUTCDate();
+            let mes = novaHora.getUTCMonth()+1;
+            let ano = novaHora.getUTCFullYear();
+
+            // Chamamos a função zero para que ela retorne a concatenação com os minutos e segundos
+
+            minuto = zero(minuto);
+            segundo = zero(segundo);
+
+            // Com o textContent, iremos inserir as horas, minutos e segundos no nosso elemento HTML
+    
+            document.getElementById('hora').textContent = hora+':'+minuto+':'+segundo;
+            document.getElementById('data').textContent = dia+'/'+mes+'/'+ano;
+
+        }, 1000);
+    </script>
+    
+</body>
+</html>
